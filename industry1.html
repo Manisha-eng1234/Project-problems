@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PulseBoard Dashboard</title>
+
+    <link rel="stylesheet" href="bootstrap1/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+
+    <style>
+        body{
+            background-color:#f5f5f5;
+        }
+
+        .sidebar{
+            height:100vh;
+            background-color:#0d1b2a;
+            color:white;
+            padding:20px;
+        }
+
+        .sidebar a{
+            display:block;
+            color:white;
+            text-decoration:none;
+            padding:10px;
+            margin-bottom:10px;
+        }
+
+        .sidebar a:hover{
+            background-color:#1b263b;
+            border-radius:5px;
+        }
+
+        .card{
+            margin-bottom:20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Sidebar -->
+        <div class="col-md-2 sidebar">
+            <h4>PulseBoard</h4>
+            <a href="#">Overview</a>
+            <a href="#">Services</a>
+            <a href="#">Alerts</a>
+            <a href="#">Logs</a>
+            <a href="#">Settings</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-10 p-4">
+
+            <div class="d-flex justify-content-between">
+                <h2>Infrastructure Overview</h2>
+                <button class="btn btn-primary">Refresh</button>
+            </div>
+
+            <!-- Metric Cards -->
+            <div class="row mt-3">
+
+                <div class="col-md-3">
+                    <div class="card p-3">
+                        <h6>CPU Load</h6>
+                        <h3>72%</h3>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning"
+                                 style="width:72%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card p-3">
+                        <h6>Memory</h6>
+                        <h3>58%</h3>
+                        <div class="progress">
+                            <div class="progress-bar bg-success"
+                                 style="width:58%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card p-3">
+                        <h6>Disk</h6>
+                        <h3>88%</h3>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger"
+                                 style="width:88%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card p-3">
+                        <h6>Network</h6>
+                        <h3>34%</h3>
+                        <div class="progress">
+                            <div class="progress-bar bg-info"
+                                 style="width:34%"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Services Table -->
+            <div class="card p-3">
+                <h4>Services</h4>
+
+                <table class="table">
+                    <tr>
+                        <th>Service</th>
+                        <th>Response</th>
+                        <th>Status</th>
+                    </tr>
+
+                    <tr>
+                        <td>API Gateway</td>
+                        <td>42 ms</td>
+                        <td><span class="badge bg-success">Operational</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Auth Service</td>
+                        <td>61 ms</td>
+                        <td><span class="badge bg-success">Operational</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Payments</td>
+                        <td>310 ms</td>
+                        <td><span class="badge bg-warning">Degraded</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>DB Primary</td>
+                        <td>Timeout</td>
+                        <td><span class="badge bg-danger">Down</span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Alerts -->
+            <div class="card p-3">
+                <h4>Recent Alerts</h4>
+
+                <ul>
+                    <li>Disk above 85%</li>
+                    <li>CPU spike detected</li>
+                    <li>Auto scaling added 1 node</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
